@@ -17,3 +17,12 @@ import os
 engine = create_engine('sqlite:///fitness_data.db')
 Base.metadata.create_all(engine)
 session = get_session(engine)
+
+class Cli():
+    def start(self):
+        os.system("clear")
+        print(bold("Welcome to the Fitness Planner! 💪"))
+        options = ["Create a new workout", "View existing workouts", "Delete workout", "Add exercise to workout", "Delete exercise from workout", "Select workout", "exit"]
+        index, selection = display_menu(options)
+        print(f"You have selected {selection}!")
+        return selection

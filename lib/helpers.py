@@ -58,5 +58,9 @@ def select_workout(session):
     options = [str(workout) for workout in workouts]
     index, selection = display_menu(options, "Select a workout")
     return workouts[index]
+
+def exit_program():
+    print('Bye! 👋')
+    exit()
       
 

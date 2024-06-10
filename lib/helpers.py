@@ -50,5 +50,13 @@ def display_menu(options, prompt="Please choose an option"):
     menu_entry_index = terminal_menu.show()
     return menu_entry_index, options[menu_entry_index]
 
-def select_workout(session):        
+def select_workout(session):  
+    workouts = get_all_workouts(session)
+    if not workouts:
+        print("No workouts available.")
+        return None
+    options = [str(workout) for workout in workouts]
+    index, selection = display_menu(options, "Select a workout")
+    return workouts[index]
+      
 

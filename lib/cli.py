@@ -12,3 +12,8 @@ from simple_term_menu import TerminalMenu
 from models import Base, Workout, Exercise, association_table 
 from sqlalchemy.orm import sessionmaker
 import os
+
+# Initialize the database session
+engine = create_engine('sqlite:///fitness_data.db')
+Base.metadata.create_all(engine)
+session = get_session(engine)

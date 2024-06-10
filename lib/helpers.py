@@ -36,3 +36,19 @@ def add_exercise_to_workout(session, workout, exercise_name, sets, reps):
     workout.exercises.append(exercise)
     session.commit()
 
+def delete_exercise_from_workout(session, workout, exercise_id):
+    exercise = session.query(Exercise).filter(Exercise.id == exercise_id).first()
+    if exercise:
+        workout.exercises.remove(exercise)
+        session.commit()   
+
+ # User Interaction Functions
+def display_menu(options, prompt="Please choose an option"):
+    os.system("clear")
+    print(bold(prompt))
+    terminal_menu = TerminalMenu(options)
+    menu_entry_index = terminal_menu.show()
+    return menu_entry_index, options[menu_entry_index]
+
+def select_workout(session):        
+

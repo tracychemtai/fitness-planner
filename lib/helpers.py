@@ -42,7 +42,7 @@ def delete_exercise_from_workout(session, workout, exercise_id):
         workout.exercises.remove(exercise)
         session.commit()   
 
- # User Interaction Functions
+ # User Interface Functions
 def display_menu(options, prompt="Please choose an option"):
     os.system("clear")
     print(bold(prompt))

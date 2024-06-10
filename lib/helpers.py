@@ -22,3 +22,17 @@ def get_all_workouts(session):
 def get_workout_by_id(session, workout_id):
     return session.query(Workout).filter(Workout.id == workout_id).first()
 
+def delete_workout(session, workout_id):
+    workout = get_workout_by_id(session, workout_id)
+    if workout:
+        session.delete(workout)
+        session.commit()
+        
+    
+
+
+def add_exercise_to_workout(session, workout, exercise_name, sets, reps):
+    exercise = Exercise(name=exercise_name, sets=sets, reps=reps)
+    workout.exercises.append(exercise)
+    session.commit()
+

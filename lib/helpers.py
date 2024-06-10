@@ -15,3 +15,10 @@ def create_workout(session, name):
     session.add(workout)
     session.commit()
     return workout
+
+def get_all_workouts(session):
+    return session.query(Workout).all()
+
+def get_workout_by_id(session, workout_id):
+    return session.query(Workout).filter(Workout.id == workout_id).first()
+

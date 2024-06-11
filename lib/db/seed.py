@@ -178,3 +178,10 @@ dead_lift = exercises[5]
 cable_tricep_extensions = exercises[16]
 forearm_curls = exercises[4]
 
+push_day.exercises.append(jog)
+push_day.exercises.append(bench_press)
+push_day.exercises.append(deltoid_raises)
+push_day.exercises.append(dumbbell_press)
+push_day.exercises.append(dead_lift)
+push_day.exercises.append(cable_tricep_extensions)
+push_day.exercises.append(forearm_curls)

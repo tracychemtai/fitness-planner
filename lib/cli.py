@@ -47,3 +47,16 @@ def add_exercise_to_workout(session, workout, name, sets, reps):
     # Add and commit the new exercise to the session
     session.add(new_exercise)
     session.commit()
+
+    class Cli():
+    def start(self):
+        while True:
+            os.system("clear")
+            print(bold("Welcome to the Fitness Planner! 💪"))
+            options = ["Create a new workout", "View workouts", "Delete workout", "Add exercise to workout", "Delete exercise from workout", "Select workout", "Exit"]
+            index, selection = display_menu(options)
+            print(f"You have selected {selection}!")
+            if selection == "Exit":
+                break
+            else:
+                handle_selection(selection)

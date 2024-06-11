@@ -28,3 +28,11 @@ class Exercise(Base):
     sets = Column(Integer, nullable=False)
     reps = Column(Integer, nullable=False)
     workouts = relationship('Workout', secondary=association_table, back_populates='exercises')
+    
+    def __init__(self, name, sets, reps):
+        self.name = name
+        self.sets = sets
+        self.reps = reps
+
+    def __repr__(self):
+        return f'<Exercise(id={self.id}, name={self.name}, sets={self.sets}, reps={self.reps})>'

@@ -28,7 +28,7 @@ class Exercise(Base):
     sets = Column(Integer, nullable=False)
     reps = Column(Integer, nullable=False)
     workouts = relationship('Workout', secondary=association_table, back_populates='exercises')
-    
+
     def __init__(self, name, sets, reps):
         self.name = name
         self.sets = sets

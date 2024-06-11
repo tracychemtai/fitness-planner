@@ -174,5 +174,7 @@ jog = exercises[10]
 bench_press = exercises[0]
 deltoid_raises = exercises[14]
 dumbbell_press = exercises[1]
-
+dead_lift = exercises[5]
+cable_tricep_extensions = exercises[16]
+forearm_curls = exercises[4]
 

@@ -150,3 +150,16 @@ exercises = [
         reps=10, 
         sets=2),
 ]
+
+workouts = [
+    Workout(
+        workout_name="Push",
+        workout_description="In the “push” workout you train all the upper body pushing muscles, i.e. the chest, shoulders and triceps."),
+    Workout(
+        workout_name="Pull",
+        workout_description="In the “pull” workout you train all the upper body pulling muscles, i.e. the back and biceps."), 
+    Workout(
+        workout_name="Abs & Legs",
+        workout_description="And in the “legs” workout you train the entire lower body, i.e. the quads, hamstrings, calves and abdomen."
+    )
+]

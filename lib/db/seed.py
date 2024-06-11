@@ -7,3 +7,7 @@ print("🌱 Seeding DB...")
 engine = create_engine('sqlite:///fitness_data.db')
 Session = sessionmaker(bind=engine)
 session = Session()
+
+
+session.query(Exercise).delete()
+session.query(Workout).delete()

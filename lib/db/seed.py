@@ -163,3 +163,6 @@ workouts = [
         workout_description="And in the “legs” workout you train the entire lower body, i.e. the quads, hamstrings, calves and abdomen."
     )
 ]
+
+session.add_all(exercises)
+

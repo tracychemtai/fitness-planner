@@ -165,4 +165,6 @@ workouts = [
 ]
 
 session.add_all(exercises)
+session.add_all(workouts)
+
 

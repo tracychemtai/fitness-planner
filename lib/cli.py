@@ -22,3 +22,7 @@ def get_lowest_available_id(session, model):
     highest_id = session.query(func.max(model.id)).scalar()
     if highest_id is None:
         return 1
+    
+     # Create a set of all existing IDs
+    existing_ids = set(row[0] for row in session.query(model.id).all())
+    

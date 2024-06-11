@@ -48,7 +48,7 @@ def add_exercise_to_workout(session, workout, name, sets, reps):
     session.add(new_exercise)
     session.commit()
 
-    class Cli():
+class Cli():
     def start(self):
         while True:
             os.system("clear")
@@ -60,3 +60,89 @@ def add_exercise_to_workout(session, workout, name, sets, reps):
                 break
             else:
                 handle_selection(selection)
+
+def handle_selection(selection):
+    if selection == "Create a new workout":
+        name = input("Enter the name of the new workout (or 'Back' to return to the main menu): ")
+        if name.lower() == 'back':
+            return
+        create_workout(session, name)
+    elif selection == "View workouts":
+        workouts = get_all_workouts(session)
+        print("Existing workouts:")
+        for workout in workouts:
+            print(f"ID: {workout.id}, Name: {workout.name}")
+        input("Press Enter to return to the main menu...")
+    elif selection == "Delete workout":
+        workouts = get_all_workouts(session)
+        print("Existing workouts:")
+        for workout in workouts:
+            print(f"ID: {workout.id}, Name: {workout.name}")
+        workout_id = input("Enter the ID of the workout you want to delete (or 'Back' to return to the main menu): ")
+        if workout_id.lower() == 'back':
+            return
+        try:
+            workout_id = int(workout_id)
+            session.query(Workout).filter(Workout.id == workout_id).delete()
+            session.commit()
+        except ValueError:
+            print("Invalid input. Please enter a valid workout ID or 'Back'.")
+    elif selection == "Add exercise to workout":
+        workout = select_workout(session)
+        if workout:
+            exercise_name = input("Enter the exercise name (or 'Back' to return to the main menu): ")
+            if exercise_name.lower() == 'back':
+                return
+            sets = input("Enter the number of sets (or 'Back' to return to the main menu): ")
+            if sets.lower() == 'back':
+                return
+            reps = input("Enter the number of reps (or 'Back' to return to the main menu): ")
+            if reps.lower() == 'back':
+                return
+            try:
+                sets = int(sets)
+                reps = int(reps)
+                add_exercise_to_workout(session, workout, exercise_name, sets, reps)
+            except ValueError:
+                print("Invalid input. Please enter valid values or 'Back'.")
+    elif selection == "Delete exercise from workout":
+        workout = select_workout(session)
+        if workout:
+            print("Exercises in the selected workout:")
+            for exercise in workout.exercises:
+                print(f"ID: {exercise.id}, Name: {exercise.name}")
+            exercise_id = input("Enter the ID of the exercise to delete (or 'Back' to return to the main menu): ")
+            if exercise_id.lower() == 'back':
+                return
+            try:
+                exercise_id = int(exercise_id)
+                delete_exercise_from_workout(session, workout, exercise_id)
+            except ValueError:
+                print("Invalid input. Please enter a valid exercise ID or 'Back'.")
+    elif selection == "Select workout":
+        workouts = get_all_workouts(session)
+        print("Existing workouts:")
+        for workout in workouts:
+            print(f"ID: {workout.id}, Name: {workout.name}")
+        workout_id = input("Enter the ID of the workout to view exercises (or 'Back' to return to the main menu): ")
+        if workout_id.lower() == 'back':
+            return
+        try:
+            workout_id = int(workout_id)
+            workout = session.get(Workout, workout_id)
+            if workout:
+                print("Exercises in the selected workout:")
+                for exercise in workout.exercises:
+                    print(f"ID: {exercise.id}, Name: {exercise.name}, Sets: {exercise.sets}, Reps: {exercise.reps}")
+                input("Press Enter to return to the main menu...")
+            else:
+                print("Workout not found.")
+        except ValueError:
+            print("Invalid input. Please enter a valid workout ID or 'Back'.")
+    else:
+        exit_program()
+
+if __name__ == "__main__":
+    app = Cli()
+    app.start()
+

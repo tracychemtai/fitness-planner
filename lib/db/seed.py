@@ -218,4 +218,6 @@ abs_and_legs_day.exercises.append(situps)
 # The above code will look similar to UI commands 
 
 session.add(push_day)
+session.add(pull_day)
+
 

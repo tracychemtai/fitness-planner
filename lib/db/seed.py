@@ -187,3 +187,11 @@ push_day.exercises.append(cable_tricep_extensions)
 push_day.exercises.append(forearm_curls)
 
 pull_day = workouts[1]
+
+cycle = exercises[11]
+bicep_curls = exercises[3]
+pullups = exercises[6]
+cable_rows = exercises[7]
+lat_pulldowns = exercises[12]
+cable_flys = exercises[15]
+shrugs = exercises[13]

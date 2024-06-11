@@ -170,5 +170,9 @@ session.commit()
 
 push_day = workouts[0]
 
+jog = exercises[10]
+bench_press = exercises[0]
+deltoid_raises = exercises[14]
+dumbbell_press = exercises[1]
 
 

@@ -185,3 +185,5 @@ push_day.exercises.append(dumbbell_press)
 push_day.exercises.append(dead_lift)
 push_day.exercises.append(cable_tricep_extensions)
 push_day.exercises.append(forearm_curls)
+
+pull_day = workouts[1]

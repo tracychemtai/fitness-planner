@@ -33,4 +33,4 @@
 
 # def view_exercises():
 #     for ex in exercises:
-#         print(ex)
+

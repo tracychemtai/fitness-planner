@@ -12,6 +12,7 @@ session = Session()
 session.query(Exercise).delete()
 session.query(Workout).delete()
 
+
 exercises = [
     Exercise(
         exercise_name="Bench Press", 
@@ -21,7 +22,7 @@ exercises = [
         units="lb", 
         reps=10, 
         sets=2), 
-         Exercise(
+    Exercise(
         exercise_name="Dumbbell Press", 
         exercise_description="Lift barbells from shoulder height, extend arms.", 
         category="strength", 
@@ -37,7 +38,7 @@ exercises = [
         units="lb", 
         reps=10, 
         sets=2),
-          Exercise(
+    Exercise(
         exercise_name="Bicep Curls", 
         exercise_description="Choose wight, lift dumbbell while isolating the bicep.", 
         category="strength", 
@@ -196,7 +197,6 @@ lat_pulldowns = exercises[12]
 cable_flys = exercises[15]
 shrugs = exercises[13]
 
-
 pull_day.exercises.append(cycle)
 pull_day.exercises.append(bicep_curls)
 pull_day.exercises.append(pullups)
@@ -215,6 +215,7 @@ abs_and_legs_day.exercises.append(squat)
 abs_and_legs_day.exercises.append(planks)
 abs_and_legs_day.exercises.append(situps)
 
+
 # The above code will look similar to UI commands 
 
 session.add(push_day)
@@ -223,6 +224,6 @@ session.add(abs_and_legs_day)
 session.commit()
 
 print("💯 Seeding complete!")
-
+ 
 
 

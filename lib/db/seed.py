@@ -215,3 +215,4 @@ abs_and_legs_day.exercises.append(squat)
 abs_and_legs_day.exercises.append(planks)
 abs_and_legs_day.exercises.append(situps)
 
+# The above code will look similar to UI commands 

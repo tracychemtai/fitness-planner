@@ -26,3 +26,10 @@ def get_lowest_available_id(session, model):
      # Create a set of all existing IDs
     existing_ids = set(row[0] for row in session.query(model.id).all())
     
+    # Find the lowest available ID
+    for id in range(1, highest_id + 1):
+        if id not in existing_ids:
+            return id
+    
+    # If all IDs from 1 to highest_id are taken, return the next highest ID
+    return highest_id + 1

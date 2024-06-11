@@ -1,81 +1,126 @@
-# fitness-planner
+# CLI Fitness Planner
 
+## Table of Contents
+- [Group Members](#Group-members)
+- [Project Description](#project-description)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Commands](#commands)
+- [Contributing](#contributing)
+- [License](#license)
 
+## Group Members
+- Tracy Chemutai -Sram Master
+- Victor Maina - member
+- Aron Kiprotich- member
+- Charity Wachira - member
 
-## Introduction
+## Project Description
+The CLI Fitness Planner is a command-line interface application designed to help users to plan for their fitness activities. Users can create workout plans, view exercises, and delete exercises over time.
 
-Fork and clone this lesson
-for a template for your CLI. Take a look at the directory structure before we
-begin:
+## Features
+- Create a new workout
+- View workouts
+- Add exercise to workout
+- Delete exercise from workout
+- Select workout
+- Export and import workout data
+- User-friendly command-line interface
 
-```console
-.
+## Project Structure 
+```
 ├── Pipfile
 ├── Pipfile.lock
 ├── README.md
 └── lib
-    ├── cli.py
-    ├── db
-    │   ├── models.py
-    │   └── seed.py
-    ├── debug.py
-    └── helpers.py
+├── cli.py
+├── db
+│   ├── models.py
+│   └── seed.py
+├── debug.py
+└── helpers.py
 ```
 
 
-## Generating Your Pipenv
+## Installation
+To install and run the CLI Fitness Planner, follow these steps:
 
-You might have noticed in the file structure- there's already a Pipfile! That
-being said, we haven't put much in there- just Python version 3.8 and ipdb.
+1. Clone the repository:
+    bash
+    git clone https://github.com/tracychemtai/fitness-planner
+2. Navigate to the project directory:
+    bash
+    cd fitness-planner
+    
+3. Install the required dependencies like SQLALchemy and Alembic before you begin.You can do this straight from the command line:
+# Install dependencies
+pipenv install sqlalchemy alembic
 
-Install any dependencies you know you'll need for your project, like SQLAlchemy
-and Alembic, before you begin. You can do this straight from the command line:
+# Add Pipfile and Pipfile.lock to Git
+git add Pipfile Pipfile.lock
 
-```console
-$ pipenv install sqlalchemy alembic
+# Commit the changes
+git commit -m 'add sqlalchemy and alembic to pipenv'
+
+# Push the changes
+git push
+
+# Activate the virtual environment
+pipenv shell
+
+ ## Usage
+To start using the CLI Fitness Planner, run the following command in your terminal:
+bash
+python fitness_planner.py
 ```
 
-From here, you should run your second commit:
+## Commands
+Here are some of the main commands you can use within the application:
 
-```console
-$ git add Pipfile Pipfile.lock
-$ git commit -m'add sqlalchemy and alembic to pipenv'
-$ git push
-```
+- create a new workout: Create a new workout plan
+- View workout: view the exercise to your plan
+- Delete workout: delete the workout 
+- Add new exercise to workout:adding new exercises to workout
+- Delete exercise from workout: deleting exercises from workout
+- Select workout: selecting workout
+- Exit
+- export_data: Export your workout data
+- import_data: Import workout data
 
-Now that your environment is set up, run `pipenv shell` to enter it.
+### Command Details
 
-***
+#### create_workout
+Prompts the user to enter the name of the workout plan 
 
-## Generating Your Database
+### view_workout
+Displays a list of exercises in the current workout plan, including details such as exercise names, sets, reps
 
-Once you're in your environment, you can start development wherever you'd like.
-We think it's easiest to start with setting up your database.
+### delete_workout
+Prompts the user to select a workout plan to delete from their list of plans. 
 
-`cd` into the `lib/db` directory, then run `alembic init migrations` to set up
-Alembic. Modify line 58 in `alembic.ini` to point to the database you intend to
-create, then replace line 21 in `migrations/env.py` with the following:
+### add_exercise
+Prompts the user to enter details for the new exercise, such as the name, sets, reps, and any notes.
 
-```py
-from models import Base
-target_metadata = Base.metadata
-```
+### Delete an exercise from a workout plan
+Prompts the user to select an exercise to delete from the current workout plan. 
 
-We haven't created our `Base` or any models just yet, but we know where they're
-going to be. Navigate to `models.py` and start creating those models. Remember
-to regularly run `alembic revision --autogenerate -m'<descriptive message>'` and
-`alembic upgrade head` to track your modifications to the database and create
-checkpoints in case you ever need to roll those modifications back.
+### Select a workout plan
+Prompts the user to choose a workout plan from their list of plans. This command sets the selected plan as the active workout plan for viewing, adding, or deleting exercises.
 
-If you want to seed your database, now would be a great time to write out your
-`seed.py` script and run it to generate some test data. You may want to use
-Pipenv to install Faker to save you some time.
-
-***
+### exit
+Terminates the CLI fitness planner application. Use this command to exit the program safely.
 
 
-## Resources
+## Contributing
+We welcome contributions from the community! If you have any suggestions, bug reports, or improvements, please create an issue or submit a pull request.
 
-- [Setting up a respository - Atlassian](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
-- [Create a repo- GitHub Docs](https://docs.github.com/en/get-started/quickstart/create-a-repo)
-- [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+### Steps to Contribute
+1. Fork the repository
+2. Create a new branch (git checkout -b feature/YourFeature)
+3. Commit your changes (git commit -m 'Add some feature')
+4. Push to the branch (git push origin feature/YourFeature)
+5. Create a new Pull Request
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

@@ -16,3 +16,9 @@ from sqlalchemy.orm import sessionmaker
 engine = create_engine('sqlite:///fitness_data.db')
 Base.metadata.create_all(engine)
 session = get_session(engine)
+
+def get_lowest_available_id(session, model):
+    # Find the highest existing ID in the table
+    highest_id = session.query(func.max(model.id)).scalar()
+    if highest_id is None:
+        return 1

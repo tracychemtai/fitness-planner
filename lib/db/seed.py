@@ -168,5 +168,7 @@ session.add_all(exercises)
 session.add_all(workouts)
 session.commit()
 
+push_day = workouts[0]
+
 
 

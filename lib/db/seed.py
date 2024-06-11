@@ -210,3 +210,8 @@ abs_and_legs_day = workouts[2]
 squat = exercises[2]
 planks = exercises[8]
 situps = exercises[9]
+
+abs_and_legs_day.exercises.append(squat)
+abs_and_legs_day.exercises.append(planks)
+abs_and_legs_day.exercises.append(situps)
+

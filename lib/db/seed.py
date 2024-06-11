@@ -195,3 +195,10 @@ cable_rows = exercises[7]
 lat_pulldowns = exercises[12]
 cable_flys = exercises[15]
 shrugs = exercises[13]
+
+
+pull_day.exercises.append(cycle)
+pull_day.exercises.append(bicep_curls)
+pull_day.exercises.append(pullups)
+pull_day.exercises.append(cable_rows)
+pull_day.exercises.append(lat_pulldowns)

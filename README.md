@@ -1,6 +1,6 @@
-# Phase 3 CLI Project Template
+# fitness-planner
 
-## Learning Goals
+
 
 ## Introduction
 

@@ -33,3 +33,17 @@ def get_lowest_available_id(session, model):
     
     # If all IDs from 1 to highest_id are taken, return the next highest ID
     return highest_id + 1
+
+def add_exercise_to_workout(session, workout, name, sets, reps):
+    # Get the lowest available ID for the Exercise model
+    lowest_available_id = get_lowest_available_id(session, Exercise)
+    
+    # Create the new exercise without specifying the ID
+    new_exercise = Exercise(name=name, sets=sets, reps=reps)
+    
+    # Associate the new exercise with the workout
+    workout.exercises.append(new_exercise)
+    
+    # Add and commit the new exercise to the session
+    session.add(new_exercise)
+    session.commit()

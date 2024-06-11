@@ -6,11 +6,11 @@ from helpers import (
     select_workout, display_menu, exit_program
 )
 from models import Base
-# from sqlalchemy import create_engine, func
-# from prettycli import red, bold
-# from simple_term_menu import TerminalMenu
-# from models import Base, Workout, Exercise, association_table
-# from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine, func
+from prettycli import red, bold
+from simple_term_menu import TerminalMenu
+from models import Base, Workout, Exercise, association_table
+from sqlalchemy.orm import sessionmaker
 
 # Initialize the database session
 engine = create_engine('sqlite:///fitness_data.db')

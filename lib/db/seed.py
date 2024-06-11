@@ -220,6 +220,9 @@ abs_and_legs_day.exercises.append(situps)
 session.add(push_day)
 session.add(pull_day)
 session.add(abs_and_legs_day)
+session.commit()
+
+print("💯 Seeding complete!")
 
 
 

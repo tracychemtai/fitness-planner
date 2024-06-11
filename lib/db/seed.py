@@ -11,3 +11,13 @@ session = Session()
 
 session.query(Exercise).delete()
 session.query(Workout).delete()
+
+exercises = [
+    Exercise(
+        exercise_name="Bench Press", 
+        exercise_description="Lie on bench, lift barbell to chest, extend arms.", 
+        category="strength", 
+        weight=150, 
+        units="lb", 
+        reps=10, 
+        sets=2), 

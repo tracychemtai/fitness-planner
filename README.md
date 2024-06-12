@@ -1,4 +1,4 @@
-# CLI Fit-Track Pro
+# Fit-Track Pro
 
 ## Table of Contents
 - [Group Members](#Group-members)
@@ -17,7 +17,7 @@
 - Charity Wachira - member
 
 ## Project Description
-The CLI Fitness Planner is a command-line interface application designed to help users plan for their fitness activities. Users can create workout plans, view exercises, and delete exercises over time.
+Fit-Track Pro is a command-line interface application designed to help users plan for their fitness activities. Users can create workout plans, view exercises, and delete exercises over time.
 
 ## Features
 - Create a new workout

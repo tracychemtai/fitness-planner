@@ -1,4 +1,4 @@
-# CLI Fitness Planner
+# CLI Fit-Track Pro
 
 ## Table of Contents
 - [Group Members](#Group-members)
